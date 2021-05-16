@@ -1,26 +1,18 @@
 package dev.senk0n.era_front.screen
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.senk0n.era_front.ui.theme.ERA_FrontTheme
 
@@ -50,8 +42,9 @@ class SignIn : ComponentActivity() {
                                     text = "New user?",
                                     style = MaterialTheme.typography.caption
                                 )
+                                val context = LocalContext.current
                                 TextButton(
-                                    onClick = {}
+                                    onClick = { context.startActivity(Intent(context, SignUp::class.java)) }
                                 ) {
                                     Text(
                                         text = "Create an account"
@@ -74,8 +67,9 @@ class SignIn : ComponentActivity() {
                                 visualTransformation = PasswordVisualTransformation(),
                                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
                             )
+                            val context = LocalContext.current
                             TextButton(
-                                onClick = {}
+                                onClick = { context.startActivity(Intent(context, ResetPassword::class.java)) }
                             ) {
                                 Text(
                                     text = "Reset your password"
