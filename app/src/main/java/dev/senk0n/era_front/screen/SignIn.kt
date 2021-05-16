@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
@@ -32,15 +33,15 @@ class SignIn : ComponentActivity() {
                     Column(
                         modifier = Modifier.fillMaxHeight()
                             .padding(horizontal = 30.dp)
-                            .padding(top = 270.dp, bottom = 40.dp),
+                            .padding(top = 200.dp, bottom = 40.dp),
                         verticalArrangement = Arrangement.SpaceBetween
                     ) {
                         Column(
-//                            modifier = Modifier.padding(top = 270.dp)
                         ) {
                             Text(
                                 text = "Sign in",
-                                style = MaterialTheme.typography.h3
+                                style = MaterialTheme.typography.h4,
+                                fontWeight = FontWeight.Bold
                             )
                             Row(
                                 verticalAlignment = Alignment.CenterVertically
@@ -102,7 +103,6 @@ class SignIn : ComponentActivity() {
                             }
                         }
                     }
-
                 }
             }
         }

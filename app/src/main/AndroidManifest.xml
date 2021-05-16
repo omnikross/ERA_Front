@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ERA_Front">
         <activity
-            android:name="dev.senk0n.era_front.screen.SignIn"
+            android:name="dev.senk0n.era_front.screen.SignUp"
             android:exported="true"
             android:theme="@style/Theme.ERA_Front.NoActionBar">
             <intent-filter>
