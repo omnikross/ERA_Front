@@ -23,34 +23,29 @@ class WelcomeScreen : ComponentActivity() {
             ERA_FrontTheme {
                 Surface(color = MaterialTheme.colors.background) {
                     Column(
-                        modifier = Modifier.fillMaxHeight(),
+                        modifier = Modifier.fillMaxHeight()
+                            .padding(horizontal = 30.dp)
+                            .padding(top = 270.dp, bottom = 40.dp),
                         verticalArrangement = Arrangement.SpaceBetween
                     ) {
                         Text(
                             text = "ERA",
                             style = MaterialTheme.typography.h1,
                             modifier = Modifier.align(Alignment.CenterHorizontally)
-                                .padding(top = 270.dp)
                         )
-                        BottomButton(text = "GET STARTED", modifier = Modifier.padding(bottom = 60.dp))
+                        Column {
+                            Button(
+                                onClick = {},
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(45.dp)
+                            ) {
+                                Text("GET STARTED")
+                            }
+                        }
                     }
-
                 }
             }
         }
     }
-}
-
-@Composable
-fun BottomButton(text: String, onClick: () -> Unit = {}, modifier: Modifier = Modifier) {
-    Button(
-        onClick = onClick,
-        modifier
-            .fillMaxWidth()
-            .height(45.dp)
-            .padding(horizontal = 30.dp)
-    ) {
-        Text(text)
-    }
-
 }

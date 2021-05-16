@@ -5,25 +5,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.senk0n.era_front.ui.theme.ERA_FrontTheme
 
-class SignIn : ComponentActivity() {
+class SignUp : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -57,21 +51,18 @@ class SignIn : ComponentActivity() {
                                     )
                                 }
                             }
-//                            EmailTextField()
+//                            SimpleOutlinedTextField(value = "example@mail.com")
                             OutlinedTextField(
-                                value = "",
+                                value = "example@mail.com",
                                 onValueChange = { var text = it },
                                 label = { Text("Email") },
                                 modifier = Modifier.fillMaxWidth()
                             )
-//                            PasswordTextField()
                             OutlinedTextField(
                                 value = "",
                                 onValueChange = { var text = it },
                                 label = { Text("Password") },
-                                modifier = Modifier.fillMaxWidth(),
-                                visualTransformation = PasswordVisualTransformation(),
-                                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+                                modifier = Modifier.fillMaxWidth()
                             )
                             TextButton(
                                 onClick = {}
@@ -110,25 +101,12 @@ class SignIn : ComponentActivity() {
 }
 
 //@Composable
-//fun EmailTextField() {
-//    val text by remember { mutableStateOf("") }
+//fun SimpleOutlinedTextField() {
+//    var text by remember { mutableStateOf("") }
 //
 //    OutlinedTextField(
 //        value = text,
 //        onValueChange = { text = it },
 //        label = { Text("Label") }
-//    )
-//}
-
-//@Composable
-//fun PasswordTextField() {
-//    var password by rememberSaveable { mutableStateOf("") }
-//
-//    TextField(
-//        value = password,
-//        onValueChange = { password = it },
-//        label = { Text("Enter password") },
-//        visualTransformation = PasswordVisualTransformation(),
-//        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
 //    )
 //}
